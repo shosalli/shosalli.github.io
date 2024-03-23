@@ -1,5 +1,18 @@
-# sh /GitHub_manager/git_add_all.sh
-# clear
-. gitManager/git_add_all.sh
-. gitManager/git_commit.sh
-. gitManager/git_push.sh
+# Repo Online = 
+
+if [[ $1 == "0" ]]
+then
+    bash gitCommitCommand.sh
+else
+    while :
+    do
+        echo ""
+        echo ""
+        echo "<git>--------------**--------------"
+        bash gitCommitCommand.sh
+        echo "</git>--------------*--------------"
+        echo ""
+        echo ""
+        sleep 300
+    done
+fi

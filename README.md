@@ -1,1 +1,0 @@
-# shosalli.github.io
