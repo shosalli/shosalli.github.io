@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +16,13 @@
       height: 100vh;
       flex-direction: column;
       text-align: center;
+    }
+    img {
+      max-width: 300px; /* bigger size */
+      margin-top: 20px;
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
     }
     .streak {
       font-size: 2em;
@@ -37,7 +43,11 @@
 </head>
 <body>
   <div class="subheading">dFree: clean of old habits, clearer with time</div>
+  
   <h1>🟢 <span id="streak"></span> 💚✨</h1>
+
+  <!-- Larger image, no-drag -->
+  <img src="dfree-30.png" alt="dFree 30 Days Badge" draggable="false">
 
   <script>
     const startDate = new Date("2025-07-07T04:30:00+05:30"); // IST
@@ -60,4 +70,3 @@
   </script>
 </body>
 </html>
-
