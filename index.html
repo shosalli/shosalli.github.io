@@ -9,9 +9,7 @@
     let interval = 1000; // 1000ms
     // let countdown = 3; // time in seconds
     let countdown = 2; // time in seconds
-
-    const timer = document.getElementById(countdownText);
-    timer.textContent = countdown;
+    document.getElementById(countdownText).innerHtml = countdown;
 
     function startCountdown() {
       const interval = setInterval(() => {
