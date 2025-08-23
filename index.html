@@ -4,27 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
-  <script>
-    const countdownText = "countdown";
-    let interval = 1000; // 1000ms
-    // let countdown = 3; // time in seconds
-    let countdown = 2; // time in seconds
-    document.getElementById(countdownText).innerHtml = countdown;
-
-    function startCountdown() {
-      const interval = setInterval(() => {
-        const timer = document.getElementById(countdownText);
-        timer.textContent = countdown;
-        if (countdown <= 0) {
-          clearInterval(interval);
-          // window.location.href = "./dfree"; 
-          window.location.href = "./catc"; 
-        }
-        countdown--;
-      }, interval);
-    }
-    window.onload = startCountdown;
-  </script>
   <style>
     body {
       display: flex;
@@ -51,4 +30,25 @@
     <p>You will be taken to the new page in <span id="countdown">.</span> seconds.</p>
   </div>
 </body>
+  <script>
+    const countdownText = "countdown";
+    let interval = 1000; // 1000ms
+    // let countdown = 3; // time in seconds
+    let countdown = 2; // time in seconds
+    document.getElementById(countdownText).innerHtml = countdown;
+
+    function startCountdown() {
+      const interval = setInterval(() => {
+        const timer = document.getElementById(countdownText);
+        timer.textContent = countdown;
+        if (countdown <= 0) {
+          clearInterval(interval);
+          // window.location.href = "./dfree"; 
+          window.location.href = "./catc"; 
+        }
+        countdown--;
+      }, interval);
+    }
+    window.onload = startCountdown;
+  </script>
 </html>
