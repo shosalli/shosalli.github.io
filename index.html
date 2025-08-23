@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Redirecting...</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      display:flex; justify-content:center; align-items:center;
+      height:100vh; font-family:Arial, sans-serif;
+      background:#f5f5f5; color:#333;
     }
-    .container {
-      text-align: center;
-    }
-    .countdown {
-      font-size: 2em;
-      color: #0078d7;
-      margin-top: 10px;
-    }
+    .container { text-align:center; }
+    .countdown { font-size:2em; color:#0078d7; margin-top:10px; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Redirecting...</h1>
-    <p>You will be taken to the new page in <span id="countdown">.</span> seconds.</p>
+    <p>You will be taken to the new page in <span id="countdown" class="countdown"></span> seconds.</p>
   </div>
-</body>
+
   <script>
-    const countdownText = "countdown";
-    let interval = 1000; // 1000ms
-    // let countdown = 3; // time in seconds
-    let countdown = 2; // time in seconds
-    document.getElementById(countdownText).innerHtml = countdown;
+    const countdownId = "countdown";
+    const delayMs = 1000; // 1000ms
+    let countdown = 2;    // time in seconds
 
     function startCountdown() {
-      const interval = setInterval(() => {
-        const timer = document.getElementById(countdownText);
-        timer.textContent = countdown;
+      const timerEl = document.getElementById(countdownId);
+      timerEl.textContent = countdown; // set initial value
+
+      const loopId = setInterval(() => {
+        timerEl.textContent = countdown;
+
         if (countdown <= 0) {
-          clearInterval(interval);
-          // window.location.href = "./dfree"; 
-          window.location.href = "./catc"; 
+          clearInterval(loopId);
+          // window.location.href = "./dfree";
+          window.location.href = "./catc";
+          return;
         }
+
         countdown--;
-      }, interval);
+      }, delayMs);
     }
-    window.onload = startCountdown;
+
+    window.addEventListener('load', startCountdown);
   </script>
+</body>
 </html>
