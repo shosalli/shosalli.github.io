@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script>
-    let countdown = 3; // time in seconds
+    let interval = 1000; // 1000ms
+    // let countdown = 3; // time in seconds
+    let countdown = 2; // time in seconds
+
+    const timer = document.getElementById("countdown");
+    timer.textContent = countdown;
+
     function startCountdown() {
-      const timer = document.getElementById("countdown");
       const interval = setInterval(() => {
         timer.textContent = countdown;
         if (countdown <= 0) {
@@ -16,7 +21,7 @@
           window.location.href = "./catc"; 
         }
         countdown--;
-      }, 1000);
+      }, interval);
     }
     window.onload = startCountdown;
   </script>
