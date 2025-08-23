@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script>
+    const countdownText = "countdown";
     let interval = 1000; // 1000ms
     // let countdown = 3; // time in seconds
     let countdown = 2; // time in seconds
 
-    const timer = document.getElementById("countdown");
+    const timer = document.getElementById(countdownText);
     timer.textContent = countdown;
 
     function startCountdown() {
       const interval = setInterval(() => {
+        const timer = document.getElementById(countdownText);
         timer.textContent = countdown;
         if (countdown <= 0) {
           clearInterval(interval);
@@ -48,7 +50,7 @@
 <body>
   <div class="container">
     <h1>Redirecting...</h1>
-    <p>You will be taken to the new page in <span id="countdown">3</span> seconds.</p>
+    <p>You will be taken to the new page in <span id="countdown">.</span> seconds.</p>
   </div>
 </body>
 </html>
